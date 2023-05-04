@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8">
+        <!--<meta http-equiv="X-UA-Compatible" content="IE=edge">-->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!--<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">-->
+        <meta name="description" content="ANACARE">
+        <meta name="author" content="César González Mora">
+        <link rel="icon" href="/images/anacare.ico">
+
+        <meta property="og:site_name" content="ANACARE">
+        <meta property="og:title" content="ANACARE">
+        <meta property="og:description" content="ANACARE: anastomotic leak after low anterior resection of the rectum">
+        <meta name="keywords" content="surgery, anastomotic leak, rectum, anterior resection">
+
+        <title>ANACARE</title>
+
+        <!-- Bootstrap core CSS -->
+        <link href="./css/bootstrap.min.css" rel="stylesheet">
+        <!-- Bootstrap theme -->
+        <link href="./css/bootstrap-theme.min.css" rel="stylesheet">        
+        <!-- Jquery core CSS -->
+        <link href="./css/jquery-ui.css" rel="stylesheet">
+        <!-- Jquery theme -->
+        <link href="./css/jquery-ui.theme.css" rel="stylesheet">
+        <!-- Custom styles for this template -->
+        <link href="./css/custom.css" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@200&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+        <link rel="stylesheet" href="./css/fontawesome-stars.css">
+        <link rel="stylesheet" href="./css/bars-movie.css">
+        <link rel="stylesheet" href="./css/bars-pill.css">
+        <link rel="stylesheet" href="./css/bars-reversed.css">
+        <link rel="stylesheet" href="./css/bars-1to10.css">
+    </head>
+	<body>
+        <div class="container theme-showcase" role="main">
+            <h1>ANACARE: anastomotic leak after low anterior resection of the rectum</h1>
+
+            <br />
+            
+            <label for="age" class="form-label">Age</label>
+            <!--<input id="age" type="range" class="form-range slider" min="0" max="100" step="1" value="0" style="max-width:300px" oninput="ageoutput.value = age.value">
+            <output id="ageoutput">0</output>-->
+            <input id="age" type="number" class="form-control ageInput" placeholder="Age">
+            <br />
+            <br />
+            
+            <label for="gender" class="form-label">Gender</label>
+            <div class="btn-group btn-group-toggle" data-toggle="buttons" style="margin-left: 15px;">
+              <label class="btn btn-secondary active">
+                <input type="radio" name="genderRadio" id="male" value="male" autocomplete="off" checked> Male
+              </label>
+              <label class="btn btn-secondary">
+                <input type="radio" name="genderRadio" id="female" value="female" autocomplete="off"> Female
+              </label>
+            </div>
+
+            <br />
+            <br />
+            
+            <label for="weight" class="form-label">Weight (kg)</label>
+            <input id="weight" type="number" class="form-control ageInput" placeholder="Weight">
+            <br />
+            <br />
+            
+            <label for="height" class="form-label">Height (cm)</label>
+            <input id="height" type="number" class="form-control ageInput" placeholder="Height">
+            <br />
+            <br />
+           
+            
+            <br />
+            <label for="smoking" class="form-label">Current smoking habit?</label>
+            <div class="btn-group btn-group-toggle" data-toggle="buttons" style="margin-left: 15px;">
+              <label class="btn btn-secondary active">
+                <input type="radio" name="smokingRadio" id="smokingNo" value="no" autocomplete="off" checked> No
+              </label>
+              <label class="btn btn-secondary">
+                <input type="radio" name="smokingRadio" id="smokingYes" value="yes" autocomplete="off"> Yes
+              </label>
+            </div>
+            <br />
+            <br />
+           
+
+            <br />
+            <label for="asa" class="form-label">Was preoperative ASA score equal to or over III?</label>
+            <div class="btn-group btn-group-toggle" data-toggle="buttons" style="margin-left: 15px;">
+              <label class="btn btn-secondary active">
+                <input type="radio" name="asaRadio" id="asaNo" value="no" autocomplete="off" checked> No
+              </label>
+              <label class="btn btn-secondary">
+                <input type="radio" name="asaRadio" id="asaYes" value="yes" autocomplete="off"> Yes
+              </label>
+            </div>
+            <br />
+            <br />
+           
+
+            <br />
+            <label for="haematocrit" class="form-label">Was preoperative haematocrit equal to or below 30 %?</label>
+            <div class="btn-group btn-group-toggle" data-toggle="buttons" style="margin-left: 15px;">
+              <label class="btn btn-secondary active">
+                <input type="radio" name="haematocritRadio" id="haematocritNo" value="no" autocomplete="off" checked> No
+              </label>
+              <label class="btn btn-secondary">
+                <input type="radio" name="haematocritRadio" id="haematocritYes" value="yes" autocomplete="off"> Yes
+              </label>
+            </div>
+            <br />
+            <br />
+            
+
+            <br />
+            <label for="chemotherapy" class="form-label">Did the patient receive preoperative chemotherapy and or radiation therapy?</label>
+            <div class="btn-group btn-group-toggle" data-toggle="buttons" style="margin-left: 15px;">
+              <label class="btn btn-secondary active">
+                <input type="radio" name="chemotherapyRadio" id="chemotherapyNo" value="no" autocomplete="off" checked> No
+              </label>
+              <label class="btn btn-secondary">
+                <input type="radio" name="chemotherapyRadio" id="chemotherapyYes" value="yes" autocomplete="off"> Yes
+              </label>
+            </div>
+            <br />
+            <br />
+            
+
+            <br />
+            <label for="resection" class="form-label">Did the patient undergo an extended resection?</label>
+            <div class="btn-group btn-group-toggle" data-toggle="buttons" style="margin-left: 15px;">
+              <label class="btn btn-secondary active">
+                <input type="radio" name="resectionRadio" id="resectionNo" value="no" autocomplete="off" checked> No
+              </label>
+              <label class="btn btn-secondary">
+                <input type="radio" name="resectionRadio" id="resectionYes" value="yes" autocomplete="off"> Yes
+              </label>
+            </div>
+            <br />
+            <br />
+            
+
+            <br />
+            <label for="transanally" class="form-label">Was rectal dissection performed transanally?</label>
+            <div class="btn-group btn-group-toggle" data-toggle="buttons" style="margin-left: 15px;">
+              <label class="btn btn-secondary active">
+                <input type="radio" name="transanallyRadio" id="transanallyNo" value="no" autocomplete="off" checked> No
+              </label>
+              <label class="btn btn-secondary">
+                <input type="radio" name="transanallyRadio" id="transanallyYes" value="yes" autocomplete="off"> Yes
+              </label>
+            </div>
+            <br />
+            <br />
+
+
+            <br />
+            <label for="anastomosis" class="form-label">Which anastomosis configuration was used?</label>
+            <div class="btn-group btn-group-toggle" data-toggle="buttons" style="margin-left: 15px;">
+              <label class="btn btn-secondary active">
+                <input type="radio" name="anastomosisRadio" id="anastomosisEndtoend" value="endtoend" autocomplete="off" checked> End to End
+              </label>
+              <label class="btn btn-secondary">
+                <input type="radio" name="anastomosisRadio" id="anastomosisSidetoend" value="sidetoend" autocomplete="off"> Side to End
+              </label>
+              <label class="btn btn-secondary">
+                <input type="radio" name="anastomosisRadio" id="anastomosisSidetoside" value="sidetoside" autocomplete="off"> Side to Side
+              </label>
+            </div>
+            <br />
+            <br />
+           
+
+            <br />
+            <label for="intraoperatively" class="form-label">Was the anastomosis check performed intraoperatively?</label>
+            <div class="btn-group btn-group-toggle" data-toggle="buttons" style="margin-left: 15px;">
+              <label class="btn btn-secondary active">
+                <input type="radio" name="intraoperativelyRadio" id="intraoperativelyNo" value="no" autocomplete="off" checked> No
+              </label>
+              <label class="btn btn-secondary">
+                <input type="radio" name="intraoperativelyRadio" id="intraoperativelyYes" value="yes" autocomplete="off"> Yes
+              </label>
+            </div>
+            <br />
+            <br />
+           
+
+            <br />
+            <label for="defects" class="form-label">Was there any intraoperative suspicion of anastomotic defects?</label>
+            <div class="btn-group btn-group-toggle" data-toggle="buttons" style="margin-left: 15px;">
+              <label class="btn btn-secondary active">
+                <input type="radio" name="defectsRadio" id="defectsNo" value="no" autocomplete="off" checked> No
+              </label>
+              <label class="btn btn-secondary">
+                <input type="radio" name="defectsRadio" id="defectsYes" value="yes" autocomplete="off"> Yes
+              </label>
+            </div>
+            <br />
+            <br />
+           
+
+            <br />
+            <label for="transfusion" class="form-label">Did the patient receive blood transfusion/s during surgery?</label>
+            <div class="btn-group btn-group-toggle" data-toggle="buttons" style="margin-left: 15px;">
+              <label class="btn btn-secondary active">
+                <input type="radio" name="transfusionRadio" id="transfusionNo" value="no" autocomplete="off" checked> No
+              </label>
+              <label class="btn btn-secondary">
+                <input type="radio" name="transfusionRadio" id="transfusionYes" value="yes" autocomplete="off"> Yes
+              </label>
+            </div>
+            <br />
+            <br />
+           
+
+            <br />
+            <label for="stoma" class="form-label">Was a diverting stoma created?</label>
+            <div class="btn-group btn-group-toggle" data-toggle="buttons" style="margin-left: 15px;">
+              <label class="btn btn-secondary active">
+                <input type="radio" name="stomaRadio" id="stomaNo" value="no" autocomplete="off" checked> No
+              </label>
+              <label class="btn btn-secondary">
+                <input type="radio" name="stomaRadio" id="stomaYes" value="yes" autocomplete="off"> Yes
+              </label>
+            </div>
+            <br />
+            <br />
+            
+
+            <br />
+            <label for="nutrition" class="form-label">Did the patient receive postoperative parenteral nutrition?</label>
+            <div class="btn-group btn-group-toggle" data-toggle="buttons" style="margin-left: 15px;">
+              <label class="btn btn-secondary active">
+                <input type="radio" name="nutritionRadio" id="nutritionNo" value="no" autocomplete="off" checked> No
+              </label>
+              <label class="btn btn-secondary">
+                <input type="radio" name="nutritionRadio" id="nutritionYes" value="yes" autocomplete="off"> Yes
+              </label>
+            </div>
+            <br />
+            <br />
+           
+
+            <br />
+            <label for="transfusionAfter" class="form-label">Did the patient receive blood transfusion/s after surgery?</label>
+            <div class="btn-group btn-group-toggle" data-toggle="buttons" style="margin-left: 15px;">
+              <label class="btn btn-secondary active">
+                <input type="radio" name="transfusionAfterRadio" id="transfusionAfterNo" value="no" autocomplete="off" checked> No
+              </label>
+              <label class="btn btn-secondary">
+                <input type="radio" name="transfusionAfterRadio" id="transfusionAfterYes" value="yes" autocomplete="off"> Yes
+              </label>
+            </div>
+            <br />
+            <br />
+
+            <br />
+
+            <button type="button" class="btn btn-lg btn-primary float" onclick="calculateProbability()">Calculate</button>
+            <br />
+            <h3 id="results" style="display: inline;"></h3>
+        </div>
+        <br />
+
+        <script src="./scripts/jquery.js"></script>
+        <script src="./scripts/jquery-ui.js"></script>
+        <script src="./scripts/bootstrap.min.js"></script>
+        <script language="javascript" src="./scripts/calculadora.js"></script>
+    </body>
+</html>
