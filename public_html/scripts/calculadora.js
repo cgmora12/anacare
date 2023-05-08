@@ -37,8 +37,11 @@ $(function(){
 
 function calculateProbability()
 {   
-    var probabilityNoLeaks = 0, probabilityVeryEarly = 0, probabilityEarly = 0, probabilityLate = 0;
-    var estimated = 0, estimatedNoLeaks = 0, estimatedVeryEarly = 0, estimatedEarly = 0, estimatedLate = 0;
+    var probabilityNoLeaks = 0, probabilityVeryEarly = 0, probabilityEarly = 0, probabilityLate = 0, 
+        someTreatment = 0, medicalTreatmentvsNone = 0, radiologicalvsMedicalOrNone = 0, surgicalvsMedicalRadiologicalOrNone = 0, radiologicalvsNone = 0, surgicalvsNone = 0;
+    var estimated = 0, estimatedNoLeaks = 0, estimatedVeryEarly = 0, estimatedEarly = 0, estimatedLate = 0, 
+        estimatedSomeTreatment = 0, estimatedMedicalTreatmentvsNone = 0, estimatedRadiologicalvsMedicalOrNone = 0, estimatedSurgicalvsMedicalRadiologicalOrNone = 0,
+        estimatedRadiologicalvsNone = 0, estimatedSurgicalvsNone = 0;
 
     var ageNumber = parseInt(jQuery("#age").val());
     var age = 0;
@@ -192,9 +195,37 @@ function calculateProbability()
     probabilityLate = 100 * Math.pow(Math.E, estimatedLate) / estimated;
     probabilityNoLeaks = (100 - probabilityVeryEarly - probabilityEarly - probabilityLate);
     //probabilityAnkleFoot = (1 / (1 + Math.pow(Math.E, modelAnkleFoot)))*100; 
+        
+    estimatedSomeTreatment = -2.46474 + 0.02444 * bim + -0.91677 * genderMascFem + 0.14246 * asa + 0.5746 * haematocrit + 0.38217 * smoking 
+                            + 0.90998 * resection + -0.6968 * anastomosis + 0.65912 * transfusion;
+
+    estimatedMedicalTreatmentvsNone = -2.913 + 0.005221 * bim + -1.251552 * genderMascFem + -0.014808 * asa + 0.008461 * haematocrit + 0.414963 * smoking 
+                            + 0.747674 * resection + -0.905773 * anastomosis + 1.38318 * transfusion;
+    estimatedRadiologicalvsMedicalOrNone = -2.8097 + 0.0148 * bim + -1.2499 * genderMascFem + -0.1432 * asa + 0.1911 * haematocrit + 0.4547 * smoking 
+                            + 0.6166 * resection + -0.6704 * anastomosis + 1.0319 * transfusion;
+
+    estimatedSurgicalvsMedicalRadiologicalOrNone = -2.46474 + 0.02444 * bim + -0.91677 * genderMascFem + 0.14246 * asa + 0.5746 * haematocrit + 0.38217 * smoking 
+                            + 0.90998 * resection + -0.6968 * anastomosis + 0.65912 * transfusion;
+
+    estimatedRadiologicalvsNone = -4.54017 + 0.03388 * bim + -1.23003 * genderMascFem + -0.45033 * asa + 0.60175 * haematocrit + 0.54392 * smoking 
+                            + 0.6112 * resection + -0.2178 * anastomosis + -13.47757 * transfusion;
+    estimatedSurgicalvsNone = -3.452561 + 0.03117 * bim + -0.6529 * genderMascFem + 0.38252 * asa + 0.76699 * haematocrit + 0.30951 * smoking 
+                            + 1.08309 * resection + -0.72751 * anastomosis + 0.32068 * transfusion;
+
+    someTreatment = 100 * Math.pow(Math.E, estimatedSomeTreatment);
+    medicalTreatmentvsNone = 100 * Math.pow(Math.E, estimatedMedicalTreatmentvsNone);
+    radiologicalvsMedicalOrNone = 100 * Math.pow(Math.E, estimatedRadiologicalvsMedicalOrNone);
+    surgicalvsMedicalRadiologicalOrNone = 100 * Math.pow(Math.E, estimatedSurgicalvsMedicalRadiologicalOrNone);
+    radiologicalvsNone = 100 * Math.pow(Math.E, estimatedRadiologicalvsNone);
+    surgicalvsNone = 100 * Math.pow(Math.E, estimatedSurgicalvsNone);
 
     jQuery("#results").html("<strong>Probability of leak</strong>: <br>No leaks " + probabilityNoLeaks.toFixed(2) + "% <br>Very early leak "  + probabilityVeryEarly.toFixed(2) 
-        + "% <br>Early leak " + probabilityEarly.toFixed(2) + "% <br>Late Leak " + probabilityLate.toFixed(2) + "% "+ "<br>");
+        + "% <br>Early leak " + probabilityEarly.toFixed(2) + "% <br>Late Leak " + probabilityLate.toFixed(2) + "% "+ "<br><br><br>"
+        + "<strong>Treatmeant probability: </strong><br>Some treatmeant " + someTreatment.toFixed(2) + "% <br>Medical Treatment vs None "  + medicalTreatmentvsNone.toFixed(2)
+        + "% <br>Radiological vs Medical or None "  + radiologicalvsMedicalOrNone.toFixed(2) 
+        + "% <br>Surgical vs Medical, Radiological or None "  + surgicalvsMedicalRadiologicalOrNone.toFixed(2)
+        + "% <br>Radiological Treatment vs None" + radiologicalvsNone.toFixed(2)
+        + "% <br>Surgical Treatment vs None" + surgicalvsNone.toFixed(2) + "<br>");
 
     window.scrollTo(0,document.body.scrollHeight);
 }
