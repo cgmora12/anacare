@@ -225,7 +225,7 @@ function calculateProbability()
         + "% <br>Radiological vs Medical or None "  + radiologicalvsMedicalOrNone.toFixed(2) 
         + "% <br>Surgical vs Medical, Radiological or None "  + surgicalvsMedicalRadiologicalOrNone.toFixed(2)
         + "% <br>Radiological Treatment vs None " + radiologicalvsNone.toFixed(2)
-        + "% <br>Surgical Treatment vs None " + surgicalvsNone.toFixed(2) + "<br>");
+        + "% <br>Surgical Treatment vs None " + surgicalvsNone.toFixed(2) + "%<br>");
 
     window.scrollTo(0,document.body.scrollHeight);
 }
